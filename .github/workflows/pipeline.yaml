@@ -1,4 +1,4 @@
-name:ci-pipeline
+name: ci-pipeline
 
 on:
   push:
@@ -9,12 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5\
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 15
+          node-version: 20 # Use an LTS version for better security/stability
+          cache: 'npm'     # Optional: speeds up your workflow by caching dependencies
+
       - name: Install dependencies
         run: npm install
 
