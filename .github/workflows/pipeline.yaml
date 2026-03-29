@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5\
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 20 # Use an LTS version for better security/stability
-          cache: 'npm'     # Optional: speeds up your workflow by caching dependencies
+          node-version: 15
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
